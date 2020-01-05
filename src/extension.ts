@@ -30,7 +30,7 @@ export function activate (context: vscode.ExtensionContext) {
   )
 
   function updateDecorations () {
-    if (!activeEditor) {
+    if (!activeEditor && !vscode.workspace.getConfiguration('code-eol').show) {
       return
     }
     const configuration = vscode.workspace.getConfiguration('code-eol')
